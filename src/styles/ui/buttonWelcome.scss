@@ -1,0 +1,18 @@
+.button {
+  padding: 20px;
+  background: rgb(48, 31, 31);
+  border-radius: 40px;
+  border: none;
+  min-width: 220px;
+  color: aliceblue;
+  font-family: "Mukta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  transition: transform 2s, background-color 2s;
+
+  &:hover {
+    transform: scale(1.2);
+    background-color: rgb(188, 148, 148);
+  }
+}
