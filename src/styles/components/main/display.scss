@@ -1,0 +1,13 @@
+.canv {
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  width: 100vw; /* 100% ширины экрана */
+  height: 100vh; /* 100% высоты экрана */
+}
+
+.sample-canvas {
+  border: 1px solid black; /* Добавляем границу к канвасу (по желанию) */
+  height: 90vh;
+  width: 90vw; 
+}

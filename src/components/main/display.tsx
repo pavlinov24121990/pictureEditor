@@ -1,21 +1,24 @@
+import { FabricJSCanvas, useFabricJSEditor } from "fabricjs-react"
 import { useEffect } from "react";
+import { fabric } from "fabric";
+import '../../styles/components/main/display.scss';
+
 
 const Display = () => {
+  const { editor, onReady } = useFabricJSEditor();
 
-  
   useEffect(() => {
-    const canvas = document.getElementById('display') as HTMLCanvasElement
-    const ctx = canvas.getContext('2d');
-    if (ctx) {
-      ctx.fillStyle = 'red';
-      ctx.fillRect(100, 100, 200, 200);
-    }
-  }, []);
+    fabric.Image.fromURL('http://habrahabr.ru/i/nocopypast.png', function (oImg) {
+      oImg.set({ left: 250, top: 250 });
+      editor?.canvas.add(oImg);
+      oImg.on('mousedown', function(options) {
+      });
+    });
+  }, [fabric, editor])
 
   return (
-
-    <div>
-      <canvas id='display' width={600} height={600}>тут холст</canvas>
+    <div className="canv">
+      <FabricJSCanvas className="sample-canvas" onReady={onReady} />
     </div>
   )
 }
